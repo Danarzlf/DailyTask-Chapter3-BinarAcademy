@@ -1,0 +1,38 @@
+[
+    {
+        "id": 8,
+        "age": 29,
+        "eyeColor": "blue",
+        "name": "Clements Griffith"
+    },
+    {
+        "id": 69,
+        "age": 100,
+        "eyeColor": "red",
+        "name": "Danar"
+    },
+    {
+        "id": 5,
+        "age": 40,
+        "eyeColor": "brown",
+        "name": "Bond Dean"
+    },
+    {
+        "id": 7,
+        "age": 21,
+        "eyeColor": "brown",
+        "name": "Dickerson Fox"
+    },
+    {
+        "id": 4,
+        "age": 35,
+        "eyeColor": "blue",
+        "name": "Richmond Byers"
+    },
+    {
+        "id": 86,
+        "age": 30,
+        "eyeColor": "red",
+        "name": "Stipe"
+    }
+]
