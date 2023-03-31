@@ -100,6 +100,7 @@ app.post('/person', (req, res) => {
 
     const cukupUmur = req.body.age < 20
     const idExist = persons.find(el => el.id === req.body.id);
+    const nameLength = req.body.name.length <= 3;
 
     if (idExist) {
         res.status(400).json({
@@ -116,7 +117,12 @@ app.post('/person', (req, res) => {
             status: 'failed',
             message: `umur ${req.body.age} belum cukup`
         })
-    } else {
+    } else if (nameLength) {
+        res.status(400).json({
+            status: 'failed',
+            message: 'Panjang nama harus lebih dari 3 huruf'
+        })
+    }else {
         persons.push(newPerson);
         fs.writeFile(
             `${__dirname}/person.json`,
@@ -167,7 +173,14 @@ app.put('/person/:id', (req, res) => {
             status: 'failed',
             message: `person dengan id ${id} tersebut tidak ada / invalid`
         })
-    } else {
+    } 
+    //Validasi nama harus lebih dari 3 huruf
+    else if (req.body.name.length <= 3) {
+        res.status(400).json({
+            status: 'failed',
+            message: 'Panjang nama harus lebih dari 3 huruf'
+        });
+    }else {
         const personEdit = Object.assign(person, req.body);
 
         fs.writeFile(
